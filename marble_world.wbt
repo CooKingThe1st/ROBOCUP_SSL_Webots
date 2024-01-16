@@ -1,0 +1,261 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/road/protos/HelicoidalRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Pavement.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Asphalt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/balls/protos/Ball.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+
+WorldInfo {
+  gravity 14
+  contactProperties [
+    ContactProperties {
+      material1 "GREASE"
+      coulombFriction [
+        0
+      ]
+      bounce 0.2
+      softERP 0.1
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.026332785420500347 -0.9963471265671109 -0.08123415410687393 5.653985618353033
+  position -100.85152816740758 8.197000332979481 110.31437661426635
+  follow "ball(1)"
+  followType "Pan and Tilt Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+HelicoidalRoadSegment {
+  width 6
+  numberOfLanes 1
+  roadBorderHeight 2
+  roadBorderWidth [
+    0.1
+  ]
+  bottom TRUE
+  appearance Asphalt {
+    colorOverride 0 0 0
+  }
+  pavementAppearance Pavement {
+    colorOverride 0.666667 1 0.498039
+    IBLStrength 16
+  }
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+  castShadows TRUE
+  contactMaterial "GREASE"
+}
+Solid {
+  translation 7.08547 16.0192 34.2536
+  rotation -0.023802806193889317 0.9992352600177706 -0.031021308072264553 2.08623
+  children [
+    DEF PLANE Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        transparency 0.01
+        metalness 0
+      }
+      geometry Box {
+        size 33 6 0.2
+      }
+    }
+  ]
+  boundingObject Group {
+    children [
+      USE PLANE
+    ]
+  }
+}
+Solid {
+  translation 6.4034 16.1337 36.0719
+  rotation -0.023802806193889317 0.9992352600177706 -0.031021308072264553 2.08623
+  children [
+    DEF PLANE Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        transparency 0.7
+        metalness 0
+      }
+      geometry Box {
+        size 33 6 0.2
+      }
+    }
+  ]
+  name "roof"
+  boundingObject Group {
+    children [
+      USE PLANE
+    ]
+  }
+}
+Solid {
+  translation 6.55664 13.1337 35.0984
+  rotation 0.394297965564383 -0.669669941515048 -0.6293419450370531 -2.4445453071795864
+  children [
+    DEF PLANE Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0.498039
+        metalness 0
+      }
+      geometry Box {
+        size 33 1.6 0.2
+      }
+    }
+  ]
+  name "fence"
+  boundingObject Group {
+    children [
+      USE PLANE
+    ]
+  }
+}
+Solid {
+  translation 6.50549 19.1288 34.6956
+  rotation 0.394297965564383 -0.669669941515048 -0.6293419450370531 -2.4445453071795864
+  children [
+    DEF PLANE Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0.498039
+        metalness 0
+      }
+      geometry Box {
+        size 33 1.6 0.2
+      }
+    }
+  ]
+  name "fence(1)"
+  boundingObject Group {
+    children [
+      USE PLANE
+    ]
+  }
+}
+Solid {
+  translation -4.88743 17.5158 23.0972
+  rotation 0.4590950427927101 -0.46785304360905217 -0.7552120703940757 -2.669295307179586
+  children [
+    DEF PLANE Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0.498039
+        metalness 0
+      }
+      geometry Box {
+        size 5 6 0.2
+      }
+    }
+  ]
+  name "fence(2)"
+  boundingObject Group {
+    children [
+      USE PLANE
+    ]
+  }
+}
+Ball {
+  translation 14.2327 16.2411 48.51
+  rotation 0 0 -1 1.78678
+  radius 0.6
+  mass 4
+}
+Ball {
+  translation 14.4112 17.9422 48.8391
+  rotation 0.6135442593495081 -0.7627533224212368 0.20437908639248875 -2.815715307179586
+  name "ball(1)"
+  color 0 1 1
+  radius 0.6
+  mass 4
+}
+DEF COLUMNL Group {
+  children [
+    Solid {
+      translation 10.6293 17.5973 42.6217
+      rotation 0 1 0 -1.047195307179586
+      children [
+        DEF COL Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.7
+          }
+        }
+      ]
+      name "solid(1)"
+      boundingObject USE COL
+    }
+    Solid {
+      translation 9.4093 15.3673 40.5082
+      rotation 0 1 0 -1.047195307179586
+      children [
+        DEF COL Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.7
+          }
+        }
+      ]
+      name "solid(2)"
+      boundingObject USE COL
+    }
+    Solid {
+      translation 7.8493 19.1373 37.8058
+      rotation 0 1 0 -1.047195307179586
+      children [
+        DEF COL Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.7
+          }
+        }
+      ]
+      name "solid(3)"
+      boundingObject USE COL
+    }
+    Solid {
+      translation 6.5693 15.1973 35.5879
+      rotation 0 1 0 -1.047195307179586
+      children [
+        DEF COL Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.7
+          }
+        }
+      ]
+      name "solid(4)"
+      boundingObject USE COL
+    }
+  ]
+}
+WoodenBox {
+  translation -0.182166 14.1863 0.3
+  rotation 0 0 -1 0.124355
+  size 0.2 3 1.2
+}
+WoodenBox {
+  translation 0.147754 16.8268 0.3
+  rotation 0 0 -1 0.124355
+  name "wooden box(1)"
+  size 0.2 3 1.2
+}
